@@ -1,0 +1,13 @@
+﻿{
+  "name": "frontend",
+  "description": "Frontend changes aligned to the contract.",
+  "include": [
+    "Context Repository/contracts/expense-tracker/openapi.yaml",
+    "Context Repository/standards/api-change-policy.md",
+    "Context Repository/workflows/api-change-workflow.md",
+    "Frontend/README.md",
+    "Frontend/src/App.jsx",
+    "Frontend/src/api.js",
+    "Frontend/src/index.css"
+  ]
+}

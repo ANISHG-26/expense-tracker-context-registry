@@ -1,0 +1,12 @@
+﻿{
+  "name": "backend",
+  "description": "Contract-first backend changes.",
+  "include": [
+    "Context Repository/contracts/expense-tracker/openapi.yaml",
+    "Context Repository/standards/api-change-policy.md",
+    "Context Repository/workflows/api-change-workflow.md",
+    "Backend/README.md",
+    "Backend/app.py",
+    "Backend/tests/test_api.py"
+  ]
+}

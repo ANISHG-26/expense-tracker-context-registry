@@ -1,0 +1,23 @@
+﻿{
+  "folders": [
+    {
+      "name": "context",
+      "path": "..\\.."
+    },
+    {
+      "name": "backend",
+      "path": "..\\..\\..\\Backend"
+    },
+    {
+      "name": "frontend",
+      "path": "..\\..\\..\\Frontend"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.venv": true,
+      "**/__pycache__": true,
+      "**/node_modules": true
+    }
+  }
+}

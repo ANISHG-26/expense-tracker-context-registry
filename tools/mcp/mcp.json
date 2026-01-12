@@ -1,0 +1,24 @@
+﻿{
+  "serverName": "local-mcp-context",
+  "description": "Expose context repo and service repos for the POC.",
+  "repos": {
+    "context": "https://github.com/ANISHG-26/expense-tracker-context-registry.git",
+    "backend": "https://github.com/ANISHG-26/expense-tracker-backend.git",
+    "frontend": "https://github.com/ANISHG-26/expense-tracker-frontend.git"
+  },
+  "roots": [
+    {
+      "name": "context",
+      "path": ".."
+    },
+    {
+      "name": "backend",
+      "path": "..\\..\\Backend"
+    },
+    {
+      "name": "frontend",
+      "path": "..\\..\\Frontend"
+    }
+  ],
+  "readOnly": true
+}

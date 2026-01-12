@@ -1,0 +1,8 @@
+﻿repos:
+  - repo: local
+    hooks:
+      - id: contract-change-guard
+        name: Contract change guard
+        entry: powershell -ExecutionPolicy Bypass -File shared/scripts/check-contract-change.ps1
+        language: system
+        pass_filenames: false

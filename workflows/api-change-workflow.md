@@ -11,7 +11,7 @@ This workflow keeps frontend and backend in sync when APIs change.
 
 ## Local guardrail (optional)
 
-Run `scripts/check-contract-change.ps1` before committing. It fails if the
+Run `shared/scripts/check-contract-change.ps1` before committing. It fails if the
 contract is staged without matching backend or frontend changes.
 
 ## AI agent guidance

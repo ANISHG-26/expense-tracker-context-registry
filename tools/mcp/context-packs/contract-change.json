@@ -1,0 +1,12 @@
+﻿{
+  "name": "contract-change",
+  "description": "Contract update with service follow-up.",
+  "include": [
+    "Context Repository/contracts/expense-tracker/openapi.yaml",
+    "Context Repository/adrs/0001-contract-first.md",
+    "Context Repository/standards/api-change-policy.md",
+    "Context Repository/workflows/api-change-workflow.md",
+    "Backend/README.md",
+    "Frontend/README.md"
+  ]
+}
