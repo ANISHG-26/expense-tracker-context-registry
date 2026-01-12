@@ -1,0 +1,168 @@
+﻿openapi: 3.0.3
+info:
+  title: Expense Tracker API
+  version: 0.1.0
+  description: Simple API for managing expenses and categories.
+servers:
+  - url: http://localhost:3000
+paths:
+  /expenses:
+    get:
+      summary: List expenses
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Expense"
+    post:
+      summary: Create an expense
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExpenseCreate"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Expense"
+  /expenses/{id}:
+    get:
+      summary: Get an expense
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Expense"
+        "404":
+          description: Not found
+    put:
+      summary: Update an expense
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExpenseUpdate"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Expense"
+        "404":
+          description: Not found
+    delete:
+      summary: Delete an expense
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /categories:
+    get:
+      summary: List categories
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Category"
+components:
+  schemas:
+    Expense:
+      type: object
+      required: [id, amount, currency, categoryId, date]
+      properties:
+        id:
+          type: string
+        amount:
+          type: number
+          format: float
+        currency:
+          type: string
+          example: USD
+        categoryId:
+          type: string
+        merchant:
+          type: string
+          example: Coffee Place
+        note:
+          type: string
+        date:
+          type: string
+          format: date
+    ExpenseCreate:
+      type: object
+      required: [amount, currency, categoryId, date]
+      properties:
+        amount:
+          type: number
+          format: float
+        currency:
+          type: string
+          example: USD
+        categoryId:
+          type: string
+        merchant:
+          type: string
+          example: Coffee Place
+        note:
+          type: string
+        date:
+          type: string
+          format: date
+    ExpenseUpdate:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: float
+        currency:
+          type: string
+        categoryId:
+          type: string
+        merchant:
+          type: string
+        note:
+          type: string
+        date:
+          type: string
+          format: date
+    Category:
+      type: object
+      required: [id, name]
+      properties:
+        id:
+          type: string
+        name:
+          type: string
