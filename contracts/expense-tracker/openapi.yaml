@@ -97,6 +97,39 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Category"
+  /reports/expenses.pdf:
+    get:
+      summary: Download expense report as PDF
+      parameters:
+        - name: from
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: groupBy
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [week, month]
+          description: Optional grouping for report sections.
+      responses:
+        "200":
+          description: PDF report
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        "400":
+          description: Invalid date range
 components:
   schemas:
     Expense:
