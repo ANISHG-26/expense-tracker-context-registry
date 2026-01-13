@@ -2,20 +2,20 @@
 
 services:
   backend:
-    build: ./Backend
+    build: ../../Backend
     ports:
       - "3000:3000"
     volumes:
-      - ./Backend:/app
+      - ../../Backend:/app
     environment:
       - DATABASE_PATH=/app/expenses.db
       - PORT=3000
   frontend:
-    build: ./Frontend
+    build: ../../Frontend
     ports:
       - "5173:5173"
     volumes:
-      - ./Frontend:/app
+      - ../../Frontend:/app
       - /app/node_modules
     environment:
       - VITE_API_BASE=http://localhost:3000
